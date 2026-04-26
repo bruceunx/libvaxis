@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tmux show *)",
+      "Bash(tmux set *)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:ghostty.org)",
+      "Bash(curl -s \"https://ghostty.org\")",
+      "Bash(curl -sL \"https://github.com/ghostty-org/ghostty\")",
+      "Bash(curl -sL \"https://api.github.com/search/code?q=sixel+repo:ghostty-org/ghostty&per_page=5\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/ghostty-org/ghostty/main/README.md\")",
+      "Bash(curl *)",
+      "Bash(grep -E \"\\\\.zig$\")",
+      "Bash(tmux list-options *)",
+      "Bash(tmux show-options *)",
+      "Bash(zig build *)",
+      "Bash(git submodule *)",
+      "Read(//Volumes/space/projects/zig/test/libvaxis/**)",
+      "Bash(git -C ../test/libvaxis log --oneline -5)",
+      "Bash(git cherry-pick *)",
+      "Bash(git *)",
+      "Bash(./zig-out/bin/test)"
+    ]
+  }
+}

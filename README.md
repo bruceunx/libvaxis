@@ -72,14 +72,12 @@ or for ZLS support
         .target = target,
         .optimize = optimize,
     });
-    
     // add vaxis dependency to module
     const vaxis = b.dependency("vaxis", .{
         .target = target,
         .optimize = optimize,
     });
     exe_mod.addImport("vaxis", vaxis.module("vaxis"));
-    
     //create executable
     const exe = b.addExecutable(.{
         .name = "project_foo",
@@ -92,7 +90,7 @@ or for ZLS support
 
 Let's build a simple button counter application. This example can be run using
 the command `zig build example -Dexample=counter`. The below application has
-full mouse support: the button *and mouse shape* will change style on hover, on
+full mouse support: the button _and mouse shape_ will change style on hover, on
 click, and has enough logic to cancel a press if the release does not occur over
 the button. Try it! Click the button, move the mouse off the button and release.
 All of this logic is baked into the base `Button` widget.
@@ -295,7 +293,9 @@ pub fn main() !void {
     defer tty.deinit();
 
     // Initialize Vaxis
-    var vx = try vaxis.init(alloc, .{});
+    var vx = try vaxis.init(alloc, .{
+        .kitty_graphics_tmux_mode = .auto,
+    });
     // deinit takes an optional allocator. If your program is exiting, you can
     // choose to pass a null allocator to save some exit time.
     defer vx.deinit(alloc, tty.writer());
